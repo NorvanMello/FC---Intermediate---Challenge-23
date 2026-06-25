@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  /* =========================
+     Colors
+  ========================= */
+
+  --color-neutral-900: #000000;
+  --color-neutral-800: #303030;
+  --color-neutral-500: #808080;
+  --color-neutral-0: #ffffff;
+
+
+  /* =========================
+     Typography
+     Base: 1rem = 16px
+  ========================= */
+
+  /*Font Family*/
+  --font-family: "Inter", sans-serif;
+
+  /* Text Preset 1 */
+  --text-preset-1-size: 12.5rem;        /* 200px */
+  --text-preset-1-line-height: 0.73;
+  --text-preset-1-letter-spacing: -3.125rem; /* -50px */
+  --text-preset-1-weight: 700;
+
+  /* Text Preset 1 Mobile */
+  --text-preset-1-mobile-size: 6.25rem; /* 100px */
+  --text-preset-1-mobile-line-height: 0.73;
+  --text-preset-1-mobile-letter-spacing: -1.5625rem; /* -25px */
+
+  /* Text Preset 2 */
+  --text-preset-2-size: 3.5rem;         /* 56px */
+  --text-preset-2-line-height: 1.2;
+  --text-preset-2-letter-spacing: 0;
+  --text-preset-2-weight: 700;
+
+  /* Text Preset 2 Tablet */
+  --text-preset-2-tablet-size: 2.5rem;  /* 40px */
+
+  /* Text Preset 2 Mobile */
+  --text-preset-2-mobile-size: 1.25rem; /* 20px */
+
+  /* Text Preset 3 */
+  --text-preset-3-size: 2.5rem;         /* 40px */
+  --text-preset-3-line-height: 0.73;
+  --text-preset-3-letter-spacing: 0;
+  --text-preset-3-weight: 300;
+
+  /* Text Preset 3 Mobile */
+  --text-preset-3-mobile-size: 1.25rem; /* 20px */
+
+  /* Text Preset 4 */
+  --text-preset-4-size: 1.5rem;         /* 24px */
+  --text-preset-4-line-height: 1.1;
+  --text-preset-4-letter-spacing: 0.3rem; /* 4.8px */
+  --text-preset-4-weight: 700;
+
+  /* Text Preset 4 Mobile */
+  --text-preset-4-mobile-size: 0.9375rem; /* 15px */
+  --text-preset-4-mobile-letter-spacing: 0.1875rem; /* 3px */
+
+  /* Text Preset 5 */
+  --text-preset-5-size: 1.25rem;        /* 20px */
+  --text-preset-5-line-height: 1.1;
+  --text-preset-5-letter-spacing: 0.25rem; /* 4px */
+  --text-preset-5-weight: 400;
+
+  /* Text Preset 6 */
+  --text-preset-6-size: 1.125rem;       /* 18px */
+  --text-preset-6-line-height: 1.5;
+  --text-preset-6-letter-spacing: 0;
+  --text-preset-6-weight: 400;
+
+  /* Text Preset 7 */
+  --text-preset-7-size: 1.125rem;       /* 18px */
+  --text-preset-7-line-height: 1.5;
+  --text-preset-7-letter-spacing: 0;
+  --text-preset-7-weight: 700;
+
+  /* Text Preset 8 */
+  --text-preset-8-size: 1rem;           /* 16px */
+  --text-preset-8-line-height: 1.4;
+  --text-preset-8-letter-spacing: 0.3125rem; /* 5px */
+  --text-preset-8-weight: 700;
+
+  /* Text Preset 9 */
+  --text-preset-9-size: 0.9375rem;      /* 15px */
+  --text-preset-9-line-height: 1.5;
+  --text-preset-9-letter-spacing: 0.1875rem; /* 3px */
+  --text-preset-9-weight: 400;
+
+  /* Text Preset 9 Mobile */
+  --text-preset-9-mobile-size: 0.625rem; /* 10px */
+  --text-preset-9-mobile-letter-spacing: 0.125rem; /* 2px */
+
+  /* Text Preset to use in Font */
+
+  /* Text Preset 1 */
+  --text-preset-1: var(--text-preset-1-weight) var(--text-preset-1-size) / var(--text-preset-1-line-height) "Inter", sans-serif;
+  --text-preset-1-mobile: var(--text-preset-1-weight) var(--text-preset-1-mobile-size) / var(--text-preset-1-mobile-line-height) "Inter", sans-serif;
+  --text-preset-1-letter-spacing: -3.125rem;
+  --text-preset-1-mobile-letter-spacing: -1.5625rem;
+
+  /* Text Preset 2 */
+  --text-preset-2: var(--text-preset-2-weight) var(--text-preset-2-size) / var(--text-preset-2-line-height) "Inter", sans-serif;
+  --text-preset-2-tablet: 700 var(--text-preset-2-tablet-size) / var(--text-preset-2-line-height) "Inter", sans-serif;
+  --text-preset-2-mobile: 700 var(--text-preset-2-mobile-size) / var(--text-preset-2-line-height) "Inter", sans-serif;
+
+  /* Text Preset 3 */
+  --text-preset-3: var(--text-preset-3-weight) var(--text-preset-3-size) / var(--text-preset-3-line-height) "Inter", sans-serif;
+  --text-preset-3-mobile: 300 var(--text-preset-3-mobile-size) / var(--text-preset-3-line-height) "Inter", sans-serif;
+
+  /* Text Preset 4 */
+  --text-preset-4: var(--text-preset-4-weight) var(--text-preset-4-size) / var(--text-preset-4-line-height) "Inter", sans-serif;
+  --text-preset-4-mobile: 700 var(--text-preset-4-mobile-size) / var(--text-preset-4-line-height) "Inter", sans-serif;
+  --text-preset-4-letter-spacing: 0.3rem;
+  --text-preset-4-mobile-letter-spacing: 0.1875rem;
+
+  /* Text Preset 5 */
+  --text-preset-5: var(--text-preset-5-weight) var(--text-preset-5-size) / var(--text-preset-5-line-height) "Inter", sans-serif;
+  --text-preset-5-letter-spacing: 0.25rem;
+
+  /* Text Preset 6 */
+  --text-preset-6: var(--text-preset-6-weight) var(--text-preset-6-size) / var(--text-preset-6-line-height) var(--font-family);
+
+  /* Text Preset 7 */
+  --text-preset-7: var(--text-preset-7-weight) var(--text-preset-7-size) / var(--text-preset-7-line-height) "Inter", sans-serif;
+
+  /* Text Preset 8 */
+  --text-preset-8: var(--text-preset-8-weight) var(--text-preset-8-size) / var(--text-preset-8-line-height) "Inter", sans-serif;
+  --text-preset-8-letter-spacing: 0.3125rem;
+
+  /* Text Preset 9 */
+  --text-preset-9: var(--text-preset-9-weight) var(--text-preset-9-size) / var(--text-preset-9-line-height) "Inter", sans-serif;
+  --text-preset-9-mobile: var(--text-preset-9-weight) var(--text-preset-9-mobile-size) / var(--text-preset-9-line-height) "Inter", sans-serif;
+  --text-preset-9-letter-spacing: 0.1875rem;
+  --text-preset-9-mobile-letter-spacing: 0.125rem;
+
+
+  /* =========================
+     Spacing
+  ========================= */
+
+  --spacing-0: 0;
+  --spacing-025: 0.125rem;  /* 2px */
+  --spacing-050: 0.25rem;   /* 4px */
+  --spacing-075: 0.375rem;  /* 6px */
+  --spacing-100: 0.5rem;    /* 8px */
+  --spacing-125: 0.625rem;  /* 10px */
+  --spacing-150: 0.75rem;   /* 12px */
+  --spacing-200: 1rem;      /* 16px */
+  --spacing-250: 1.25rem;   /* 20px */
+  --spacing-300: 1.5rem;    /* 24px */
+  --spacing-400: 2rem;      /* 32px */
+  --spacing-500: 2.5rem;    /* 40px */
+  --spacing-600: 3rem;      /* 48px */
+  --spacing-800: 4rem;      /* 64px */
+  --spacing-1000: 5rem;     /* 80px */
+  --spacing-1200: 6rem;     /* 96px */
+  --spacing-1400: 7rem;     /* 112px */
+  --spacing-1600: 8rem;     /* 128px */
+  --spacing-1800: 8.75rem;  /* 140px */
+
+
+  /* =========================
+     Radius
+  ========================= */
+
+  --radius-0: 0;
+  --radius-4: 0.25rem;      /* 4px */
+  --radius-6: 0.375rem;     /* 6px */
+  --radius-8: 0.5rem;       /* 8px */
+  --radius-10: 0.625rem;    /* 10px */
+  --radius-12: 0.75rem;     /* 12px */
+  --radius-16: 1rem;        /* 16px */
+  --radius-20: 1.25rem;     /* 20px */
+  --radius-24: 1.5rem;      /* 24px */
+  --radius-full: 999px;
+}
+
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+body {
+   background-image: url("./assets/mobile/bg-image-daytime.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-color: rgba(0, 0, 0, 0.4);
+   background-blend-mode: multiply;
+
+   padding: var(--spacing-400) var(--spacing-200);
+}
+
+main {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+/* Text Container */
+.text-container {
+   display: flex;
+   gap: var(--spacing-200);
+}
+
+.text-author {
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-150);
+}
+
+.text {
+   font: var(--text-preset-6);
+   color: var(--color-neutral-0);
+}
+
+.author {
+   font: var(--text-preset-7);
+   color: var(--color-neutral-0);
+}
+
+.reload-btn {
+   background: none;
+   border: none;
+   display: flex;
+   align-items: start;
+}
