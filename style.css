@@ -28,7 +28,6 @@
   /* Text Preset 1 Mobile */
   --text-preset-1-mobile-size: 6.25rem; /* 100px */
   --text-preset-1-mobile-line-height: 0.73;
-  --text-preset-1-mobile-letter-spacing: -1.5625rem; /* -25px */
 
   /* Text Preset 2 */
   --text-preset-2-size: 3.5rem;         /* 56px */
@@ -101,7 +100,7 @@
   --text-preset-1: var(--text-preset-1-weight) var(--text-preset-1-size) / var(--text-preset-1-line-height) "Inter", sans-serif;
   --text-preset-1-mobile: var(--text-preset-1-weight) var(--text-preset-1-mobile-size) / var(--text-preset-1-mobile-line-height) "Inter", sans-serif;
   --text-preset-1-letter-spacing: -3.125rem;
-  --text-preset-1-mobile-letter-spacing: -1.5625rem;
+  --text-preset-1-mobile-letter-spacing: -0.15625rem;
 
   /* Text Preset 2 */
   --text-preset-2: var(--text-preset-2-weight) var(--text-preset-2-size) / var(--text-preset-2-line-height) "Inter", sans-serif;
@@ -187,6 +186,21 @@
 }
 
 body {
+   min-height: 100vh;
+
+   display: flex;
+   flex-direction: column;
+}
+
+main {
+   display: flex;
+   flex-direction: column;
+
+   flex: 1;
+}
+
+/* Top Side */
+.top-side {
    background-image: url("./assets/mobile/bg-image-daytime.jpg");
    background-repeat: no-repeat;
    background-size: cover;
@@ -194,12 +208,12 @@ body {
    background-blend-mode: multiply;
 
    padding: var(--spacing-400) var(--spacing-200);
-}
 
-main {
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+
+   flex: 1;
 }
 
 /* Text Container */
@@ -230,3 +244,120 @@ main {
    display: flex;
    align-items: start;
 }
+
+/* Time Container */
+.time-container {
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-800);
+}
+
+.time-text-container {
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-300);
+}
+
+.greeting-container {
+   display: flex;
+   gap: var(--spacing-200);
+}
+
+.icon {
+
+}
+
+.greeting-text {
+   font: var(--text-preset-5);
+   letter-spacing: var(--text-preset-5-letter-spacing);
+   color: var(--color-neutral-0);
+}
+
+.time-display-container {
+   
+}
+
+.time {
+   font: var(--text-preset-1-mobile);
+   letter-spacing: var(--text-preset-1-mobile-letter-spacing);
+   color: var(--color-neutral-0);
+}
+
+.summer-time-text {
+   font: var(--text-preset-3-mobile);
+   color: var(--color-neutral-0);
+}
+
+.place-container {
+
+}
+
+.place {
+   font: var(--text-preset-4-mobile);
+   letter-spacing: var(--text-preset-4-mobile-letter-spacing);
+   color: var(--color-neutral-0);
+}
+
+.more-less-btn {
+   font: var(--text-preset-8);
+   letter-spacing: var(--text-preset-8-letter-spacing);
+   color: var(--color-neutral-900);
+
+   padding: var(--spacing-100) var(--spacing-100) var(--spacing-100) var(--spacing-250);
+   border-radius: var(--radius-full);
+   border: none;
+
+   display: flex;
+   align-items: center;
+   gap: var(--spacing-150);
+
+   align-self: flex-start;
+}
+
+.arrow {
+   background-color: var(--color-neutral-800);
+   border-radius: var(--radius-full);
+}
+
+/* Bottom Side */
+.bottom-side {
+   background-color: rgba(0, 0, 0, 0.4);
+
+   padding: var(--spacing-600) var(--spacing-200);
+}
+
+/* Info Container */
+.info-container {
+   
+}
+
+.info-content {
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-200);
+}
+
+.info-item {
+   display: flex;
+   justify-content: space-between;
+}
+
+.info-text {
+   font: var(--text-preset-9-mobile);
+   letter-spacing: var(--text-preset-9-mobile-letter-spacing);
+
+   color: var(--color-neutral-800);
+}
+
+.info-value {
+   font: var(--text-preset-2-mobile);
+   
+   color: var(--color-neutral-800);
+}
+
+.hidden {
+   display: none;
+}
+
+
+
