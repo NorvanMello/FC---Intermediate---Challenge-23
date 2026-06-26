@@ -216,19 +216,19 @@ main {
    flex: 1;
 }
 
-/* Text Container */
-.text-container {
+/* Quote Container */
+.quote-container {
    display: flex;
    gap: var(--spacing-200);
 }
 
-.text-author {
+.quote-author {
    display: flex;
    flex-direction: column;
    gap: var(--spacing-150);
 }
 
-.text {
+.quote {
    font: var(--text-preset-6);
    color: var(--color-neutral-0);
 }
@@ -351,7 +351,6 @@ main {
 
 .info-value {
    font: var(--text-preset-2-mobile);
-   
    color: var(--color-neutral-800);
 }
 
