@@ -1,4 +1,6 @@
-export function renderQuote(quoteTextContainer) {
+export function renderQuote(quoteTextContainer, quoteData, onReload) {
+    quoteTextContainer.innerHTML = "";
+    
     const quoteAuthor = document.createElement("div");
     quoteAuthor.classList.add("quote-author");
 
@@ -7,13 +9,13 @@ export function renderQuote(quoteTextContainer) {
 
     const p = document.createElement("p");
 
-    p.textContent = "“The science of operations, as derived from mathematics more especially, is a science of itself, and has its own abstract truth and value.”"
+    p.textContent = `“${quoteData.quote}”`
     quote.appendChild(p)
     quoteAuthor.appendChild(quote)
 
     const author = document.createElement("figcaption");
     author.classList.add("author");
-    author.textContent = "Ada Lovelace";
+    author.textContent = quoteData.author;
 
     quoteAuthor.appendChild(author);
 
@@ -21,6 +23,16 @@ export function renderQuote(quoteTextContainer) {
 
     const reloadBtn = document.createElement("button");
     reloadBtn.classList.add("reload-btn");
+    reloadBtn.type = "button";
+    reloadBtn.setAttribute("aria-label", "Load another quote")
 
-    
+    const reloadImg = document.createElement("img");
+    reloadImg.src = "./assets/desktop/icon-refresh.svg";
+    reloadImg.alt = "";
+
+    reloadBtn.appendChild(reloadImg);
+
+    reloadBtn.addEventListener("click", onReload)
+
+    quoteTextContainer.appendChild(reloadBtn)
 }
