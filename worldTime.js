@@ -1,4 +1,6 @@
-function formatTime(timeData) {
+import { getIPInfo } from "./ipInfoAPI.js";
+
+export function formatTime(timeData) {
     const data = timeData.datetime;
     const dateObj = new Date(data)
 
@@ -6,18 +8,39 @@ function formatTime(timeData) {
     const minutes = dateObj.getMinutes().toString().padStart(2, "0")
 
     const formattedTime = `${hours}:${minutes}`
-    const tz = timeData.timezone;
-    console.log(tz)
-    const options = { timeZone: tz, timeZoneName: "short" };
-    const parts = new Intl.DateTimeFormat("pt-BR", options).formatToParts(dateObj);
-
-    const timeZoneAbbr = parts.find(p => p.type === "timeZoneName").value;
-
-    console.log(formattedTime, timeZoneAbbr); 
+    
     return formattedTime;
 }
 
-export function renderTime(timeContainer, timeData) {
+function greetingTime(timeData) {
+    const hours = timeData.slice(0, 2)
+    
+    if(hours > 5 && hours < 12) {
+        return "GOOD MORNING"
+    } if(hours >= 12 && hours < 18) {
+        return "GOOD AFTERNOON"
+    } else {
+        return "GOOD EVENING"
+    }
+}
+
+function selectIcon(timeData) {
+    const hours = timeData.slice(0, 2)
+
+    if(hours > 5 && hours < 18) {
+        return "./assets/desktop/icon-sun.svg"
+    }
+
+    return "./assets/desktop/icon-moon.svg"
+}
+
+function expandInfo() {
+
+}
+
+export async function renderTime(timeContainer, timeData) {
+    const formattedTime = formatTime(timeData);
+
     const timeTextContainer = document.createElement("div");
     timeTextContainer.classList.add("time-text-container");
 
@@ -26,14 +49,14 @@ export function renderTime(timeContainer, timeData) {
 
     const icon = document.createElement("img");
     icon.classList.add("icon");
-    icon.src = "./assets/desktop/icon-sun.svg";
+    icon.src = selectIcon(formattedTime);
     icon.alt = "";
 
     greetingContainer.append(icon)
 
     const greetingText = document.createElement("p");
     greetingText.classList.add("greeting-text");
-    greetingText.textContent = "GOOD MORNING";
+    greetingText.textContent = greetingTime(formattedTime);
 
     greetingContainer.appendChild(greetingText)
     timeTextContainer.appendChild(greetingContainer)
@@ -43,7 +66,7 @@ export function renderTime(timeContainer, timeData) {
 
     const time = document.createElement("time");
     time.classList.add("time");
-    time.textContent = formatTime(timeData);
+    time.textContent = formattedTime;
 
     timeDisplayContainer.append(time);
 
@@ -59,7 +82,7 @@ export function renderTime(timeContainer, timeData) {
 
     const place = document.createElement("span");
     place.classList.add("place");
-    place.textContent = "IN LONDON, UK";
+    place.textContent = await getIPInfo(timeData.client_ip);;
 
     placeContainer.appendChild(place);
     timeTextContainer.appendChild(placeContainer);
@@ -74,6 +97,10 @@ export function renderTime(timeContainer, timeData) {
 
     moreLessBtn.textContent = "MORE";
     moreLessBtn.appendChild(arrow);
+
+    moreLessBtn.addEventListener("click", () => {
+        expandInfo()
+    })
 
     
     timeContainer.appendChild(timeTextContainer);
