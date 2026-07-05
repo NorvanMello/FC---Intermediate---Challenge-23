@@ -34,8 +34,27 @@ function selectIcon(timeData) {
     return "./assets/desktop/icon-moon.svg"
 }
 
-function expandInfo() {
+function expandInfo(btnText, arrow, moreLessBtn) {
+    const bottomSide = document.querySelector(".bottom-side");
+    const topSide = document.querySelector(".top-side")
+    const quoteContainer = document.querySelector(".quote-container");
 
+    if(btnText.target.innerText === "MORE") {
+        btnText.target.textContent = "LESS"
+        arrow.src = "./assets/desktop/icon-arrow-up.svg"
+        moreLessBtn.appendChild(arrow);
+
+        topSide.style.paddingTop = "80px";
+    } else {
+        btnText.target.textContent = "MORE"
+        arrow.src = "./assets/desktop/arrow-down.svg"
+        moreLessBtn.appendChild(arrow);
+
+        topSide.style.paddingTop = "32px";
+    }
+    
+    bottomSide.classList.toggle("hidden")
+    quoteContainer.classList.toggle("hidden")
 }
 
 export async function renderTime(timeContainer, timeData) {
@@ -98,11 +117,10 @@ export async function renderTime(timeContainer, timeData) {
     moreLessBtn.textContent = "MORE";
     moreLessBtn.appendChild(arrow);
 
-    moreLessBtn.addEventListener("click", () => {
-        expandInfo()
+    moreLessBtn.addEventListener("click", (event) => {
+        expandInfo(event, arrow, moreLessBtn)
     })
 
-    
     timeContainer.appendChild(timeTextContainer);
     timeContainer.appendChild(moreLessBtn)
 
