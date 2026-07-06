@@ -7,11 +7,14 @@ import { renderBottom } from "./toggleBottom.js"
 
 const quoteTextContainer = document.querySelector(".quote-container");
 const timeContainer = document.querySelector(".time-container");
+const reloadBtn = document.querySelector(".reload-btn");
 // const infoContent = document.querySelector(".info-content")
 
 async function loadQuote() {
     const quoteData = await getQuote()
-    renderQuote(quoteTextContainer, quoteData, loadQuote); 
+    renderQuote(quoteData);
+
+    reloadBtn.addEventListener("click", loadQuote)
 }
 
 async function init() {
