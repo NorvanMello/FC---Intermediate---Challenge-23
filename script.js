@@ -3,7 +3,7 @@ import { getQuote } from "./quoteApi.js"
 import { renderQuote } from "./quote.js"
 import { renderTime } from "./worldTime.js"
 import { setBackgroundByTime } from "./dynamicBackground.js"
-import { renderBottom } from "./toggleBottom.js"
+import { renderBottom, setupBottomToggle } from "./toggleBottom.js"
 
 const quoteTextContainer = document.querySelector(".quote-container");
 const timeContainer = document.querySelector(".time-container");
@@ -19,11 +19,13 @@ async function loadQuote() {
 
 async function init() {
     const timeData = await getTime()
-    console.log(timeData)
+
     renderTime(timeContainer, timeData)
 
-    setBackgroundByTime(timeData)
-    renderBottom(timeData)
+    setBackgroundByTime(timeData);
+
+    setupBottomToggle();
+    renderBottom(timeData);  
 }
 
 loadQuote();
